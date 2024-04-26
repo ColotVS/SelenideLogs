@@ -9,7 +9,7 @@ import java.util.logging.Level;
 
 public class LogsTest {
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         ChromeOptions chromeOptions = new ChromeOptions();
         LoggingPreferences loggingPreferences = new LoggingPreferences();
@@ -17,8 +17,8 @@ public class LogsTest {
         loggingPreferences.enable(LogType.BROWSER, Level.ALL);
         loggingPreferences.enable(LogType.PERFORMANCE, Level.ALL);
 
-        desiredCapabilities.setCapability("goog:loggingPrefs",loggingPreferences);
-        desiredCapabilities.setCapability(ChromeOptions.CAPABILITY,chromeOptions);
+        desiredCapabilities.setCapability("goog:loggingPrefs", loggingPreferences);
+        desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
         Configuration.browserCapabilities = desiredCapabilities;
         Configuration.timeout = 10000;
