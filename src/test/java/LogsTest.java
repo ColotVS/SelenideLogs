@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -18,6 +19,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
 import java.util.logging.Level;
+
+import static com.codeborne.selenide.Selenide.$x;
 
 public class LogsTest {
     private final Supplier<ConditionFactory> WAITER = () -> Awaitility.given()
@@ -53,6 +56,19 @@ public class LogsTest {
         Assertions.assertTrue(isLogExist,"Лог не пришёл");
     }
 
+    @Test
+    public void logsErrorTest(){
+        Selenide.open("http://85.192.34.140:8081/");
+        $x("//h5[text()='Elements']").click();
+        $x("//li[@id='item-6']/span[contains(text(), 'Broken')]").click();
+        $x("//p[text()='Broken image']").should(Condition.visible);
+
+        String errorMessage = "http://85.192.34.140:8081/images/ThreadQa.jpg - Failed to load resource: " +
+                "net::ERR_CONNECTION_REFUSED";
+
+        boolean isContainsLogs = waitLogs(errorMessage);
+        Assertions.assertTrue(isContainsLogs,"Сообщение в логах " + errorMessage + " не найдено");
+    }
     @BeforeEach
     public void setUp() {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
