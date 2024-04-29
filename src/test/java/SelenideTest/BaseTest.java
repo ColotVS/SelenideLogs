@@ -5,11 +5,11 @@ import com.codeborne.selenide.Selenide;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+
 
 public abstract class BaseTest {
 
-    public static void setUp(){
+    public static void setUp() {
         WebDriverManager.chromedriver().setup();    //Скачиваем хром драйвер и устанавливаем его
         Configuration.browser = "chrome";           //Указываем браузер
         Configuration.webdriverLogsEnabled = true;  //Указываем на работу с WebDriverManager
@@ -18,12 +18,12 @@ public abstract class BaseTest {
     }
 
     @BeforeAll
-    public static void init(){
+    public static void init() {
         setUp();
     }
 
     @AfterAll
-    public static void down(){
+    public static void down() {
         Selenide.closeWebDriver();  //Закрываем страницу теста
     }
 }
