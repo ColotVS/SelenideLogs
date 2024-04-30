@@ -2,7 +2,7 @@ package SelenideTest;
 
 import org.junit.jupiter.api.Test;
 
-public class AppleInsiderTest extends BaseTest{
+public class AppleInsiderTest extends BaseTest {
     //Задача:
     //1. Открыть сайт https://appleinsider.ru/
     //2. Нажать на кнопку поиска сверху справа.
@@ -14,7 +14,7 @@ public class AppleInsiderTest extends BaseTest{
     private static final String SEARCH_STRING = "Чем iPhone 13 отличается от iPhone 12";
 
     @Test
-    public void checkHrefTest(){
+    public void checkHrefTest() {
         MainPage mainPage = new MainPage(BASE_URL);
     }
 }

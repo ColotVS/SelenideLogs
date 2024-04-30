@@ -9,12 +9,11 @@ public class MainPage {
     //Главная страница сайта appleinsider.ru
     private final SelenideElement searchButton = $x("//form");
 
-    public MainPage (String url){
+    public MainPage(String url) {
         Selenide.open(url);
     }
 
     public void clickOnSearch() {
         searchButton.click();
     }
-
 }
