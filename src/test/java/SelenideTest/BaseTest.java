@@ -14,7 +14,7 @@ public abstract class BaseTest {
         Configuration.browser = "chrome";           //Указываем браузер
         Configuration.webdriverLogsEnabled = true;  //Указываем на работу с WebDriverManager
         Configuration.browserSize = "1920x1080";    //Размер окна
-        Configuration.headless = true;              //Видимость окна браузера при выполнении теста
+        Configuration.headless = false;              //Видимость окна браузера при выполнении теста
     }
 
     @BeforeAll
