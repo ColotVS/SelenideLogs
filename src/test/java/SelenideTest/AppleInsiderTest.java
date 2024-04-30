@@ -1,5 +1,6 @@
 package SelenideTest;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class AppleInsiderTest extends BaseTest {
@@ -12,10 +13,14 @@ public class AppleInsiderTest extends BaseTest {
 
     private static final String BASE_URL = "https://appleinsider.ru/";
     private static final String SEARCH_STRING = "Чем iPhone 13 отличается от iPhone 12";
+    private static final String COMPARATIVE_STRING = "iphone-13";
 
     @Test
     public void checkHrefTest() {
         MainPage mainPage = new MainPage(BASE_URL);
         mainPage.search(SEARCH_STRING);
+        SearchPage searchPage = new SearchPage();
+        String href = searchPage.getHrefOnFirstArticle();
+        Assertions.assertTrue(href.contains(COMPARATIVE_STRING));
     }
 }
