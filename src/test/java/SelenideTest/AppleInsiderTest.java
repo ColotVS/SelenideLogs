@@ -17,10 +17,6 @@ public class AppleInsiderTest extends BaseTest {
 
     @Test
     public void checkHrefTest() {
-        MainPage mainPage = new MainPage(BASE_URL);
-        mainPage.search(SEARCH_STRING);
-        SearchPage searchPage = new SearchPage();
-        String href = searchPage.getHrefOnFirstArticle();
-        Assertions.assertTrue(href.contains(COMPARATIVE_STRING));
+        Assertions.assertTrue(new MainPage(BASE_URL).search(SEARCH_STRING).getHrefOnFirstArticle().contains(COMPARATIVE_STRING));
     }
 }

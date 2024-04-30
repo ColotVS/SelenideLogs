@@ -21,8 +21,9 @@ public class MainPage {
      * Выполняется поиск на сайте среди статей и нажимается клавиша Enter
      * @param search поисковый запрос
      */
-    public void search(String search) {
+    public SearchPage search(String search) {
         inputBox.setValue(search);
         inputBox.sendKeys(Keys.ENTER);
+        return new SearchPage();
     }
 }
