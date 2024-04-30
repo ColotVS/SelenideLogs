@@ -15,6 +15,7 @@ public class AppleInsiderTest extends BaseTest{
 
     @Test
     public void checkHrefTest(){
-
+        MainPage mainPage = new MainPage();
+        mainPage.openWebSite(BASE_URL);
     }
 }
