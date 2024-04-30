@@ -9,9 +9,10 @@ public class SearchPage {
 
     /**
      * Возвращает href из первой статьи
+     *
      * @return
      */
-    public String getHrefOnFirstArticle(){
+    public String getHrefOnFirstArticle() {
         return articleTitle.first().getAttribute("href");
     }
 }

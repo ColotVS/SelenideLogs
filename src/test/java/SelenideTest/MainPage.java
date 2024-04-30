@@ -19,6 +19,7 @@ public class MainPage {
 
     /**
      * Выполняется поиск на сайте среди статей и нажимается клавиша Enter
+     *
      * @param search поисковый запрос
      */
     public SearchPage search(String search) {
