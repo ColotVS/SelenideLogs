@@ -1,5 +1,6 @@
 package SelenideTest;
 
+import Core.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
