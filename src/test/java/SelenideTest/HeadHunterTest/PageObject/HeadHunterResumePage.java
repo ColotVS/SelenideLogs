@@ -14,6 +14,13 @@ public class HeadHunterResumePage {
     private final SelenideElement city = $x("//span[@data-qa='resume-personal-address']");
     private final SelenideElement liveData = $x("//span[@data-qa='resume-personal-address']/ancestor::p");  //Элемент на 1 выше предыдущего
     private final SelenideElement workPermit = $x("//div[@class='resume-block-container']/p[text()='Разрешение на работу']");
+    public static String GENDER = "Пол";
+    public static String AGE = "Возраст";
+    public static String CITY = "Город";
+    public static String READY_TO_RELOCATE = "Готовность к переезду";
+    public static String READY_TO_BUSINESS_TRIPS = "Готовность к командировкам";
+    public static String WORK_PERMIT = "Разрешение на работу";
+
 
     /**
      * Конструктор класса HeadHunterResumePage
