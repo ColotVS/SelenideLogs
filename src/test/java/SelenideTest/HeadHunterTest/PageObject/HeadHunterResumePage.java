@@ -122,6 +122,6 @@ public class HeadHunterResumePage {
      * далее берём элемент под индексом 1 и сравниваем его с текстовым значением
      */
     public boolean haveWorkPermitRussia() {
-        return workPermit.getText().split(", ")[1].equals("Россия");
+        return workPermit.getText().split(": ")[1].equals("Россия");
     }
 }

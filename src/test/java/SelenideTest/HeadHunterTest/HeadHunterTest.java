@@ -35,6 +35,7 @@ public class HeadHunterTest extends BaseTest {
             put(HeadHunterResumePage.WORK_PERMIT, true);
         }};
         Map <String, Object> actualAttributes = headHunterResumePage.getAttributes();
+
         Assertions.assertEquals(expectedAttributes,actualAttributes);
     }
 }
