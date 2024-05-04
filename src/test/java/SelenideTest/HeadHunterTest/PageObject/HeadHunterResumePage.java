@@ -10,7 +10,7 @@ public class HeadHunterResumePage {
       Страница резюме с сайта Head Hunter
      */
     private final SelenideElement gender = $x("//span[@data-qa='resume-personal-gender']");
-
+    private final SelenideElement age = $x("//span[@data-qa='resume-personal-age']/span");
     /**
      * Конструктор класса HeadHunterResumePage
      *
@@ -20,6 +20,10 @@ public class HeadHunterResumePage {
         Selenide.open(url);
     }
 
+    /**
+     * Вернуть пол, 1 вариант if-else
+     * @return Если веб-элемент возвращает Мужчина, то возвращаем М иначе Ж
+     */
     public String getGender() {
         String genderValue = gender.getText();
         if (genderValue.equals("Мужчина")) {
@@ -27,7 +31,20 @@ public class HeadHunterResumePage {
         } else return "Ж";
     }
 
+    /**
+     * Вернуть пол, 2 вариант через тернарный оператор
+     * @return Если веб-элемент возвращает Мужчина, то возвращаем М иначе Ж
+     */
     public String getGenderTernary() {
         return gender.getText().equals("Мужчина") ? "М" : "Ж";
+    }
+
+    /**
+     * Вернуть возраст
+     * @return Берем текст из веб-элемента, при помощи регулярного выражения удаляем из него все символы,
+     * за исключением цифр и преобразуем полученное значение к типу int.
+     */
+    public int getAge(){
+        return Integer.parseInt(age.getText().replaceAll("\\D+", ""));
     }
 }
