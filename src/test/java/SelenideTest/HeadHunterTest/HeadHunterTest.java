@@ -1,6 +1,7 @@
 package SelenideTest.HeadHunterTest;
 
 import Core.BaseTest;
+import org.junit.jupiter.api.Test;
 
 public class HeadHunterTest extends BaseTest {
     /**
@@ -13,4 +14,10 @@ public class HeadHunterTest extends BaseTest {
      *  3) Убедиться в соответствии фактического и ожидаемого результата
      *  Ожидаемый результат sex = "M", age = 25, city = "Новоалтайск", confirmedPhoneNumber = true, readyToRelocate = true.
      */
+    private static final String BASE_URL = "https://barnaul.hh.ru/resume/d07921a0ff0d18d7470039ed1f7a6f79517931?hhtmFrom=resume_list";
+
+    @Test
+    public void checkAttributesHashMap(){
+
+    }
 }
