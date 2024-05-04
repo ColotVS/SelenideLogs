@@ -1,6 +1,7 @@
 package SelenideTest.HeadHunterTest;
 
 import Core.BaseTest;
+import SelenideTest.HeadHunterTest.PageObject.HeadHunterResumePage;
 import org.junit.jupiter.api.Test;
 
 public class HeadHunterTest extends BaseTest {
@@ -18,6 +19,6 @@ public class HeadHunterTest extends BaseTest {
 
     @Test
     public void checkAttributesHashMap(){
-
+        HeadHunterResumePage headHunterResumePage = new HeadHunterResumePage(BASE_URL);
     }
 }
