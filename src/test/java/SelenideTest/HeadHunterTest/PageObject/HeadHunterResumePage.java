@@ -39,15 +39,17 @@ public class HeadHunterResumePage {
      *
      * @return возвращает актуальную HashMap с парами ключ-значение
      */
-    public Map<String,Object> getAttributes(){
-        Map<String,Object> attributes = new HashMap<>();
-        attributes.put(GENDER,getGender());
-        attributes.put(AGE,getAge());
-        attributes.put(CITY,getCity());
-        attributes.put(READY_TO_RELOCATE,readyToRelocate());
-        attributes.put(READY_TO_BUSINESS_TRIPS,readyToBusinessTrips());
-        attributes.put(WORK_PERMIT,haveWorkPermitRussia());
-        return attributes;
+    public Map<String, Object> getAttributes() {
+        return new HashMap<>() {
+            {
+                put(GENDER, getGender());
+                put(AGE, getAge());
+                put(CITY, getCity());
+                put(READY_TO_RELOCATE, readyToRelocate());
+                put(READY_TO_BUSINESS_TRIPS, readyToBusinessTrips());
+                put(WORK_PERMIT, haveWorkPermitRussia());
+            }
+        };
     }
 
     /**
