@@ -27,4 +27,7 @@ public class HeadHunterResumePage {
         } else return "Ж";
     }
 
+    public String getGenderTernary() {
+        return gender.getText().equals("Мужчина") ? "М" : "Ж";
+    }
 }
