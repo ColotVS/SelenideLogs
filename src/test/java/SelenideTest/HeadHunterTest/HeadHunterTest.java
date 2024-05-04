@@ -2,6 +2,7 @@ package SelenideTest.HeadHunterTest;
 
 import Core.BaseTest;
 import SelenideTest.HeadHunterTest.PageObject.HeadHunterResumePage;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -33,5 +34,7 @@ public class HeadHunterTest extends BaseTest {
             put(HeadHunterResumePage.READY_TO_BUSINESS_TRIPS, false);
             put(HeadHunterResumePage.WORK_PERMIT, true);
         }};
+        Map <String, Object> actualAttributes = headHunterResumePage.getAttributes();
+        Assertions.assertEquals(expectedAttributes,actualAttributes);
     }
 }
