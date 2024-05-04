@@ -11,6 +11,7 @@ public class HeadHunterResumePage {
      */
     private final SelenideElement gender = $x("//span[@data-qa='resume-personal-gender']");
     private final SelenideElement age = $x("//span[@data-qa='resume-personal-age']/span");
+    private final SelenideElement city = $x("//span[@data-qa='resume-personal-address']");
     /**
      * Конструктор класса HeadHunterResumePage
      *
@@ -46,5 +47,13 @@ public class HeadHunterResumePage {
      */
     public int getAge(){
         return Integer.parseInt(age.getText().replaceAll("\\D+", ""));
+    }
+
+    /**
+     * Вернуть город
+     * @return Берем текст из веб-элемента
+     */
+    public String getCity(){
+        return city.getText();
     }
 }
