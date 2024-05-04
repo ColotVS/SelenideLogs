@@ -1,4 +1,4 @@
-package SelenideTest;
+package SelenideTest.AppleInsiderTest.PageObject;
 
 import com.codeborne.selenide.ElementsCollection;
 

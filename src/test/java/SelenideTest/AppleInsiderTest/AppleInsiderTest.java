@@ -1,6 +1,7 @@
-package SelenideTest;
+package SelenideTest.AppleInsiderTest;
 
 import Core.BaseTest;
+import SelenideTest.AppleInsiderTest.PageObject.MainPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
