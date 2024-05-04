@@ -3,6 +3,9 @@ package SelenideTest.HeadHunterTest.PageObject;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static com.codeborne.selenide.Selenide.$x;
 
 public class HeadHunterResumePage {
@@ -29,6 +32,22 @@ public class HeadHunterResumePage {
      */
     public HeadHunterResumePage(String url) {
         Selenide.open(url);
+    }
+
+    /**
+     * Создание актуальной HashMap с парами ключ-значение
+     *
+     * @return возвращает актуальную HashMap с парами ключ-значение
+     */
+    public Map<String,Object> getAttributes(){
+        Map<String,Object> attributes = new HashMap<>();
+        attributes.put(GENDER,getGender());
+        attributes.put(AGE,getAge());
+        attributes.put(CITY,getCity());
+        attributes.put(READY_TO_RELOCATE,readyToRelocate());
+        attributes.put(READY_TO_BUSINESS_TRIPS,readyToBusinessTrips());
+        attributes.put(WORK_PERMIT,haveWorkPermitRussia());
+        return attributes;
     }
 
     /**
