@@ -7,15 +7,16 @@ import org.junit.jupiter.api.Test;
 public class HeadHunterTest extends BaseTest {
     /**
      * 1) Отрыть резюме, которое доступно по ссылке
-     * https://barnaul.hh.ru/resume/d07921a0ff0d18d7470039ed1f7a6f79517931?hhtmFrom=resume_list
+     * https://barnaul.hh.ru/resume/c9b1fc850005ea401f0039ed1f6b50555a5769?query=QA+engineer&searchRid=1714802890239c1c903512a7e27ddcf0&hhtmFrom=resume_search_result
 
      * 2) Получить информацию о профиле используя HashMap или Class, в котором должны быть следующие атрибуты:
-     * String sex, int age, String city, boolean confirmedPhoneNumber, boolean readyToRelocate;
+     * String sex, int age, String city, boolean readyToBusinessTrips, boolean readyToRelocate, boolean workPermitRussia;
 
      *  3) Убедиться в соответствии фактического и ожидаемого результата
-     *  Ожидаемый результат sex = "M", age = 25, city = "Новоалтайск", confirmedPhoneNumber = true, readyToRelocate = true.
+     *  Ожидаемый результат sex = "M", age = 31, city = "Барнаул",
+     *  readyToBusinessTrips = false, readyToRelocate = false, workPermitRussia = true.
      */
-    private static final String BASE_URL = "https://barnaul.hh.ru/resume/d07921a0ff0d18d7470039ed1f7a6f79517931?hhtmFrom=resume_list";
+    private static final String BASE_URL = "https://barnaul.hh.ru/resume/c9b1fc850005ea401f0039ed1f6b50555a5769?query=QA+engineer&searchRid=1714802890239c1c903512a7e27ddcf0&hhtmFrom=resume_search_result";
 
     @Test
     public void checkAttributesHashMap(){
