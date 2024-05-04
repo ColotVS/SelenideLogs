@@ -73,4 +73,15 @@ public class HeadHunterResumePage {
     public boolean readyToRelocate() {
         return !liveData.getText().split(", ")[1].equals("не готов к переезду");
     }
+
+    /**
+     * Вернуть параметр готов к командировкам
+     *
+     * @return получаем массив элементов с использованием метода split,
+     * разделяющего текст на основание переданного выражения
+     * далее берём элемент под индексом 1 и сравниваем его с текстовым значением
+     */
+    public boolean readyToBusinessTrips() {
+        return !liveData.getText().split(", ")[2].equals("не готов к командировкам");
+    }
 }
