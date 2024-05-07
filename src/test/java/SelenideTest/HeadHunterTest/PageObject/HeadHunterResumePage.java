@@ -16,13 +16,11 @@ public class HeadHunterResumePage {
     private final SelenideElement age = $x("//span[@data-qa='resume-personal-age']/span");
     private final SelenideElement city = $x("//span[@data-qa='resume-personal-address']");
     private final SelenideElement liveData = $x("//span[@data-qa='resume-personal-address']/ancestor::p");  //Элемент на 1 выше предыдущего
-    private final SelenideElement workPermit = $x("//div[@class='resume-block-container']/p[text()='Разрешение на работу']");
+
     public static String GENDER = "Пол";
     public static String AGE = "Возраст";
     public static String CITY = "Город";
     public static String READY_TO_RELOCATE = "Готовность к переезду";
-    public static String READY_TO_BUSINESS_TRIPS = "Готовность к командировкам";
-    public static String WORK_PERMIT = "Разрешение на работу";
 
 
     /**
@@ -46,8 +44,6 @@ public class HeadHunterResumePage {
                 put(AGE, getAge());
                 put(CITY, getCity());
                 put(READY_TO_RELOCATE, readyToRelocate());
-                put(READY_TO_BUSINESS_TRIPS, readyToBusinessTrips());
-                put(WORK_PERMIT, haveWorkPermitRussia());
             }
         };
     }
@@ -101,27 +97,5 @@ public class HeadHunterResumePage {
      */
     public boolean readyToRelocate() {
         return !liveData.getText().split(", ")[1].equals("не готов к переезду");
-    }
-
-    /**
-     * Вернуть параметр готов к командировкам
-     *
-     * @return получаем массив элементов с использованием метода split,
-     * разделяющего текст на основание переданного выражения
-     * далее берём элемент под индексом 2 и сравниваем его с текстовым значением
-     */
-    public boolean readyToBusinessTrips() {
-        return !liveData.getText().split(", ")[2].equals("не готов к командировкам");
-    }
-
-    /**
-     * Вернуть параметр разрешение на работу
-     *
-     * @return получаем массив элементов с использованием метода split,
-     * разделяющего текст на основание переданного выражения
-     * далее берём элемент под индексом 1 и сравниваем его с текстовым значением
-     */
-    public boolean haveWorkPermitRussia() {
-        return workPermit.getText().split(": ")[1].equals("Россия");
     }
 }
