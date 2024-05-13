@@ -15,7 +15,7 @@ public class HeadHunterTest extends BaseTest {
      * https://barnaul.hh.ru/resume/c9b1fc850005ea401f0039ed1f6b50555a5769?query=QA+engineer&searchRid=1714802890239c1c903512a7e27ddcf0&hhtmFrom=resume_search_result
      * <p>
      * 2) Получить информацию о профиле используя HashMap или Class, в котором должны быть следующие атрибуты:
-     * String sex, int age, String city, boolean readyToRelocate, boolean readyToBusinessTrips, boolean workPermitRussia;
+     * String sex, int age, String city, boolean readyToRelocate;
      * <p>
      * 3) Убедиться в соответствии фактического и ожидаемого результата
      * Ожидаемый результат sex = "M", age = 31, city = "Барнаул",
